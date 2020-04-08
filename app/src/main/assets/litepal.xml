@@ -5,7 +5,7 @@
     <version value="1"></version>
 
     <list>
-        <mapping class="com.example.toutiao.bean.NewsData"></mapping>
+        <mapping class="com.example.toutiao.logic.model.NewsData"></mapping>
     </list>
 
 </litepal>
