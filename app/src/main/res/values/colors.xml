@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#2B2B2B</color>
+    <color name="colorPrimaryDark">#DADADA</color>
+    <color name="colorToolbar">#DADADA</color>
+    <color name="textColorPrimary">#000000</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorPink">#EC6395</color>
     <color name="colorRed">#F83E3E</color>
@@ -9,4 +11,5 @@
     <color name="colorDarkBlue">#0B84E9</color>
     <color name="colorGray">#6D7275</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFF</color>
 </resources>

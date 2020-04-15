@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item_home"
-        android:icon="@drawable/home_bla"
+        android:id="@+id/navigation_news"
+        android:icon="@drawable/ic_news"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/item_video"
-        android:icon="@drawable/video_bla"
+        android:id="@+id/navigation_video"
+        android:icon="@drawable/ic_video"
         android:title="@string/title_video" />
     <item
-        android:id="@+id/item_profile"
-        android:icon="@drawable/profile_bla"
+        android:id="@+id/navigation_weather"
+        android:icon="@drawable/ic_weather"
         android:title="@string/title_profile" />
 
 </menu>

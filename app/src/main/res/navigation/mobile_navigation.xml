@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_news">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.toutiao.activity.ui.home.HomeFragment"
+        android:id="@+id/navigation_news"
+        android:name="com.example.toutiao.ui.fragment.news.NewsFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_news" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.toutiao.activity.ui.video.VideoFragment"
+        android:id="@+id/navigation_video"
+        android:name="com.example.toutiao.ui.fragment.video.VideoFragment"
         android:label="@string/title_video"
         tools:layout="@layout/fragment_video" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.toutiao.activity.ui.profile.ProfileFragment"
+        android:id="@+id/navigation_weather"
+        android:name="com.example.toutiao.ui.fragment.weather.WeatherFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_weather" />
 </navigation>

@@ -1,7 +1,11 @@
 package com.example.toutiao.utils
 
 import android.content.Context
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.databinding.BindingAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

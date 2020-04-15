@@ -5,7 +5,6 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
-import com.example.myapplication.R;
 import com.example.toutiao.R;
 
 public class ImageUtil {

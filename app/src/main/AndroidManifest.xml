@@ -15,16 +15,45 @@
     <dist:module dist:instant="true" />
 
     <application
+        android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon"
-        android:label="新闻头条"
+        android:label="快新闻"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:label">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.PlaceActivity"
+            android:label="@string/title_activity_change_place"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.DetailsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.SwipeCloseActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <service
+            android:name=".service.WeatherUpdateService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".broadcast.WeatherUpdateReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.toutiao.broadcast.WEATHER_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +61,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.toutiao.base.BaseActivity" />
+        <activity android:name=".base.BaseActivity" />
     </application>
 
 </manifest>

@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">Toutiao</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">首页</string>
+    <string name="title_home">新闻</string>
     <string name="title_video">视频</string>
-    <string name="title_profile">我的</string>
+    <string name="title_profile">天气</string>
     <string name="text_size">18sp</string>
+    <string name="title_activity_change_place">ChangePlaceActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="temp_unit"> ℃</string>
+    <string name="air_con">空气质量 </string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

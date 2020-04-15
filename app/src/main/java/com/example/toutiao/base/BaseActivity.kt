@@ -1,13 +1,12 @@
 package com.example.toutiao.base
 
 import android.Manifest
-import android.annotation.SuppressLint
-import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.toutiao.R
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.OnPermissionDenied
 import permissions.dispatcher.RuntimePermissions
@@ -17,23 +16,14 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        init()
+
+        window.apply {
+            decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            grantPermission()
+        }
         if (!grantPermission()) exit()
-    }
-
-    @SuppressLint("SourceLockedOrientationActivity")
-    private fun init() {
-        val window = window
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-                or WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = Color.TRANSPARENT
-        window.navigationBarColor = Color.TRANSPARENT
-
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT     //锁定竖屏
     }
 
     @NeedsPermission(
