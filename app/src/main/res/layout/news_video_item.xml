@@ -20,7 +20,6 @@
             android:textSize="18sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--webview逻辑待实现-->
         <WebView
             android:id="@+id/video_web"
             android:layout_width="match_parent"
@@ -30,7 +29,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_video_title" />
 
-        <!--此处播放键的点击事件应在adapter中完成-->
         <Button
             android:id="@+id/btn_play"
             android:layout_width="60dp"
@@ -45,6 +43,7 @@
             android:id="@+id/head_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:scaleType="center"
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"

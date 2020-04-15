@@ -23,7 +23,7 @@ class VideoViewModel : ViewModel() {
 
     fun saveWhenExit() {
         val list = videoList.value
-        if (list != null) {
+        if (list != null && list.size >= 20) {
             videoList.value?.removeAll(list.subList(0, list.size - 11))
             saveNews()
         }
