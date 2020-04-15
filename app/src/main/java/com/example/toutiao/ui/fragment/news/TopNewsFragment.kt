@@ -87,11 +87,11 @@ class TopNewsFragment : Fragment() {
         val list = viewModel.refreshNews()
         withContext(Dispatchers.Main) {
             if (viewModel.topNewsList.value != null) {
-                viewModel.topNewsList.value!!.addAll(list)
+                viewModel.topNewsList.value!!.addAll(list.subList(2, list.size - 1))
             } else {
                 viewModel.topNewsList.value = list
             }
-            newsList.addAll(list.subList(2, list.size - 1))
+            newsList.addAll(0, list.subList(2, list.size - 1))
             topNewsAdapter.notifyDataSetChanged()
             viewModel.saveNews()
         }
@@ -106,7 +106,7 @@ class TopNewsFragment : Fragment() {
         val list = viewModel.loadMore()
         withContext(Dispatchers.Main) {
             if (viewModel.topNewsList.value != null) {
-                viewModel.topNewsList.value!!.addAll(viewModel.topNewsList.value!!.size - 1, list)
+                viewModel.topNewsList.value!!.addAll(list.subList(2, list.size - 1))
             } else {
                 viewModel.topNewsList.value = list
             }

@@ -85,11 +85,11 @@ class VideoFragment : Fragment() {
         val list = viewModel.refreshNews()
         withContext(Dispatchers.Main) {
             if (viewModel.videoList.value != null) {
-                viewModel.videoList.value!!.addAll(list)
+                viewModel.videoList.value!!.addAll(0, list)
             } else {
                 viewModel.videoList.value = list
             }
-            videoList.addAll(list.subList(2, list.size - 1))
+            videoList.addAll(0, list)
             videoAdapter.notifyDataSetChanged()
             viewModel.saveNews()
         }
@@ -104,11 +104,11 @@ class VideoFragment : Fragment() {
         val list = viewModel.loadMore()
         withContext(Dispatchers.Main) {
             if (viewModel.videoList.value != null) {
-                viewModel.videoList.value!!.addAll(viewModel.videoList.value!!.size - 1, list)
+                viewModel.videoList.value!!.addAll(list)
             } else {
                 viewModel.videoList.value = list
             }
-            videoList.addAll(list.subList(2, list.size - 1))
+            videoList.addAll(list)
             videoAdapter.notifyDataSetChanged()
             viewModel.saveNews()
         }

@@ -57,6 +57,7 @@ class VideoAdapter(private val videoList: List<VideoModel.VideoList>) :
                 loadUrl(item.image[0])
             }
         }
+        holder.binding.tvVideoTitle.text = item.title
         holder.binding.tvPlaycount.text = item.videoInfo.video.playcount.toString()
         ImageUtil.GlideLoadImage(holder.binding.headIcon, item.authorIcon)
         holder.binding.btnPlay.setOnClickListener {

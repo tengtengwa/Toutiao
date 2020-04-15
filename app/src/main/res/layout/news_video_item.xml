@@ -10,16 +10,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp">
+        android:layout_height="340dp">
+
+        <TextView
+            android:id="@+id/tv_video_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!--webview逻辑待实现-->
         <WebView
             android:id="@+id/video_web"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_video_title" />
 
         <!--此处播放键的点击事件应在adapter中完成-->
         <Button

@@ -90,11 +90,11 @@ class AntiFragment : Fragment() {
 
         withContext(Dispatchers.Main) {
             if (viewModel.antipNewsList.value != null) {
-                viewModel.antipNewsList.value!!.addAll(list)
+                viewModel.antipNewsList.value!!.addAll(0, list.subList(2, list.size - 1))
             } else {
                 viewModel.antipNewsList.value = list
             }
-            newsList.addAll(list.subList(2, list.size - 1))
+            newsList.addAll(0, list.subList(2, list.size - 1))
             antipNewsAdapter.notifyDataSetChanged()
             viewModel.saveNews()
         }
@@ -109,7 +109,7 @@ class AntiFragment : Fragment() {
         val list = viewModel.loadMore()
         withContext(Dispatchers.Main) {
             if (viewModel.antipNewsList.value != null) {
-                viewModel.antipNewsList.value!!.addAll(viewModel.antipNewsList.value!!.size - 1, list)
+                viewModel.antipNewsList.value!!.addAll(list.subList(2, list.size - 1))
             } else {
                 viewModel.antipNewsList.value = list
             }

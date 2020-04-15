@@ -90,11 +90,11 @@ class EntFragment : Fragment() {
         val list = viewModel.refreshNews()
         withContext(Dispatchers.Main) {
             if (viewModel.entNewsList.value != null) {
-                viewModel.entNewsList.value!!.addAll(list)
+                viewModel.entNewsList.value!!.addAll(0, list.subList(2, list.size - 1))
             } else {
                 viewModel.entNewsList.value = list
             }
-            newsList.addAll(list.subList(2, list.size - 1))
+            newsList.addAll(0, list.subList(2, list.size - 1))
             sportNewsAdapter.notifyDataSetChanged()
             viewModel.saveNews()
         }
@@ -109,7 +109,7 @@ class EntFragment : Fragment() {
         val list = viewModel.loadMore()
         withContext(Dispatchers.Main) {
             if (viewModel.entNewsList.value != null) {
-                viewModel.entNewsList.value!!.addAll(viewModel.entNewsList.value!!.size - 1, list)
+                viewModel.entNewsList.value!!.addAll(list)
             } else {
                 viewModel.entNewsList.value = list
             }
