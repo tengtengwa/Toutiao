@@ -2,7 +2,6 @@ package com.example.toutiao.base
 
 import android.app.Application
 import android.content.Context
-import com.tencent.smtt.sdk.QbSdk
 
 class BaseApplication : Application() {
 
@@ -16,15 +15,5 @@ class BaseApplication : Application() {
         super.onCreate()
         context = applicationContext
 
-        //初始化X5内核
-        QbSdk.initX5Environment(this,object : QbSdk.PreInitCallback {
-            override fun onCoreInitFinished() {
-
-            }
-
-            override fun onViewInitFinished(p0: Boolean) {
-
-            }
-        })
     }
 }

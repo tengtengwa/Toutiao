@@ -8,7 +8,6 @@ import android.view.WindowManager
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import com.example.toutiao.R
-import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.web_view_details.*
 
 class DetailsActivity : SwipeCloseActivity() {

@@ -102,6 +102,7 @@ class VideoFragment : Fragment() {
 
     private fun loadMoreVideoList() = mainScope.launch(Dispatchers.IO) {
         val list = viewModel.loadMore()
+        list.removeAt(1)
         withContext(Dispatchers.Main) {
             if (viewModel.videoList.value != null) {
                 viewModel.videoList.value!!.addAll(list)
