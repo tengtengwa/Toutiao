@@ -19,7 +19,7 @@ class PlaceAdapter(private val placeList: List<Place>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceViewHolder {
         val binding = DataBindingUtil.inflate<PlaceItemBinding>(LayoutInflater.from(parent.context),
-                R.layout.place_item, parent, false)
+                R.layout.item_place, parent, false)
         return PlaceViewHolder(binding)
     }
 

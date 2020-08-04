@@ -25,7 +25,7 @@ class VideoAdapter(private val videoList: List<VideoModel.VideoList>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = DataBindingUtil.inflate<NewsVideoItemBinding>(LayoutInflater.from(parent.context),
-                R.layout.news_video_item, parent, false)
+                R.layout.item_news_video, parent, false)
         return MyViewHolder(binding)
     }
 

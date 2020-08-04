@@ -8,7 +8,7 @@ data class DailyModel(val status: String, val result: Result) {
     data class Result(val daily: Daily)
 
     data class Daily(val temperature: List<Temperature>, val skycon: List<Skycon>,
-                     @SerializedName("life_index") val lifeIndex: LifeIndex)
+                     @SerializedName("layout_life_index") val lifeIndex: LifeIndex)
 
     data class Temperature(val max: Float, val min: Float)
 

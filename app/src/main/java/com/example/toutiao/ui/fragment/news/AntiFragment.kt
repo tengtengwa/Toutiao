@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.toutiao.R
 import com.example.toutiao.adapter.AntipNewsAdapter
 import com.example.toutiao.base.BaseApplication
+import com.example.toutiao.base.BaseFragment
 import com.example.toutiao.logic.model.AntipNewsModel
 import com.example.toutiao.ui.activity.DetailsActivity
 import com.example.toutiao.utils.NetworkUtil
@@ -24,7 +25,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AntiFragment : Fragment() {
+class AntiFragment : BaseFragment() {
 
     private lateinit var viewModel: AntipViewModel
 
@@ -85,19 +86,11 @@ class AntiFragment : Fragment() {
         })
     }
 
-    private fun fetchTopNews() = mainScope.launch(Dispatchers.IO) {
-        val list = viewModel.refreshNews()
-
-        withContext(Dispatchers.Main) {
-            if (viewModel.antipNewsList.value != null) {
-                viewModel.antipNewsList.value!!.addAll(0, list.subList(2, list.size - 1))
-            } else {
-                viewModel.antipNewsList.value = list
-            }
-            newsList.addAll(0, list.subList(2, list.size - 1))
-            antipNewsAdapter.notifyDataSetChanged()
-            viewModel.saveNews()
-        }
+    //可能还有问题
+    private fun fetchTopNews() {
+        viewModel.refreshNews()
+        antipNewsAdapter.notifyDataSetChanged()
+        viewModel.saveNews()
     }
 
     override fun onDestroy() {

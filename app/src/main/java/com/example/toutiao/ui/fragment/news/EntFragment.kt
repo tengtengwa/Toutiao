@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.toutiao.R
 import com.example.toutiao.adapter.EntNewsAdapter
 import com.example.toutiao.base.BaseApplication
+import com.example.toutiao.base.BaseFragment
 import com.example.toutiao.logic.model.EntNewsModel
 import com.example.toutiao.ui.activity.DetailsActivity
 import com.example.toutiao.utils.NetworkUtil
@@ -24,7 +25,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class EntFragment : Fragment() {
+class EntFragment : BaseFragment() {
 
     private lateinit var viewModel: EntViewModel
 

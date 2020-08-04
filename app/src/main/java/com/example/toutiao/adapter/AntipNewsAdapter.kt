@@ -9,7 +9,6 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.toutiao.R
 import com.example.toutiao.base.BaseApplication
@@ -18,8 +17,6 @@ import com.example.toutiao.ui.activity.DetailsActivity
 import com.example.toutiao.utils.ImageUtil
 import com.example.toutiao.utils.NetworkUtil
 import com.example.toutiao.utils.toast
-import kotlinx.android.synthetic.main.antip_web_item.*
-import kotlinx.android.synthetic.main.web_view_details.*
 
 class AntipNewsAdapter(private val antipNews: ArrayList<AntipNewsModel.AntipNewsList>) :
         RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -64,19 +61,19 @@ class AntipNewsAdapter(private val antipNews: ArrayList<AntipNewsModel.AntipNews
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
         ANTIP_WEB_ITEM-> {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.antip_web_item, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_antip_web, parent, false)
             AntipItemHolder(view)
         }
         ITEM_STYLE_1 -> {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.news_item1, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_no_image, parent, false)
             Item1Holder(view)
         }
         ITEM_STYLE_2 -> {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.news_item2, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_1image, parent, false)
             Item2Holder(view)
         }
         else -> {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.news_item3, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_3images, parent, false)
             Item3Holder(view)
         }
     }

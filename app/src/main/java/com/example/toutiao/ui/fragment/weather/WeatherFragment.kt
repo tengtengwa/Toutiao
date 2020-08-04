@@ -13,15 +13,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.toutiao.R
 import com.example.toutiao.base.BaseApplication
-import com.example.toutiao.logic.model.Place
 import com.example.toutiao.logic.model.WeatherModel
 import com.example.toutiao.logic.model.getSky
 import com.example.toutiao.ui.activity.PlaceActivity
 import com.example.toutiao.utils.toast
-import kotlinx.android.synthetic.main.forecast.*
+import kotlinx.android.synthetic.main.layout_forecast.*
 import kotlinx.android.synthetic.main.fragment_weather.*
-import kotlinx.android.synthetic.main.life_index.*
-import kotlinx.android.synthetic.main.now.*
+import kotlinx.android.synthetic.main.layout_life_index.*
+import kotlinx.android.synthetic.main.layout_now.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -96,7 +95,7 @@ class WeatherFragment : Fragment() {
         for (i in 0 until days) {
             val skycon = daily.skycon[i]
             val temperature = daily.temperature[i]
-            val view = LayoutInflater.from(context).inflate(R.layout.forecast_item, forecastLayout, false)
+            val view = LayoutInflater.from(context).inflate(R.layout.item_forecast, forecastLayout, false)
             val dateInfo = view.findViewById(R.id.dateInfo) as TextView
             val skyIcon = view.findViewById(R.id.skyIcon) as ImageView
             val skyInfo = view.findViewById(R.id.skyInfo) as TextView

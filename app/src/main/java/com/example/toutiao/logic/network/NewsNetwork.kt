@@ -1,6 +1,5 @@
 package com.example.toutiao.logic.network
 
-import com.example.toutiao.logic.model.*
 import com.example.toutiao.utils.await
 
 object NewsNetwork {

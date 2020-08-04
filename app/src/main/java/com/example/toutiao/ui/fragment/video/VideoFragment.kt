@@ -65,18 +65,10 @@ class VideoFragment : Fragment() {
         rv_video.apply {
             adapter = videoAdapter
             layoutManager = LinearLayoutManager(context)
-/*            topNewsAdapter.onListItemClicked = object : VideoAdapter.OnListItemClicked {
-                override fun onItemClick(view: View, pos: Int) {
-                    val intent = Intent(context, DetailsActivity::class.java)
-                    intent.putExtra("url", newsList[pos].url)
-                    startActivity(intent)
-                }
-            }*/
         }
 
         viewModel.videoList.observe(viewLifecycleOwner, Observer {
             videoList.addAll(it)
-            Log.d("ttw", "topNewsList size: ${videoList.size}")
             videoAdapter.notifyDataSetChanged()
         })
     }

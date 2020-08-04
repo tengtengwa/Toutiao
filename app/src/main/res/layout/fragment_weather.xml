@@ -30,22 +30,33 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/now" />
+                <include layout="@layout/layout_now" />
 
-                <include layout="@layout/forecast" />
+                <include layout="@layout/layout_forecast" />
 
-                <include layout="@layout/life_index" />
+                <include layout="@layout/layout_life_index" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="数据来源：彩云天气"
+                    android:text="@string/weather_source"
                     android:textColor="@color/colorGray" />
             </LinearLayout>
 
         </ScrollView>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

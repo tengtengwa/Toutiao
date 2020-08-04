@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.toutiao.R
 import com.example.toutiao.adapter.SportNewsAdapter
 import com.example.toutiao.base.BaseApplication
+import com.example.toutiao.base.BaseFragment
 import com.example.toutiao.logic.model.SportNewsModel
 import com.example.toutiao.ui.activity.DetailsActivity
 import com.example.toutiao.utils.NetworkUtil
@@ -23,7 +24,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SportFragment : Fragment() {
+class SportFragment : BaseFragment() {
 
     private lateinit var viewModel: SportViewModel
 

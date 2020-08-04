@@ -3,19 +3,18 @@ package com.example.toutiao.ui.activity
 import android.annotation.SuppressLint
 import android.graphics.PixelFormat
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import com.example.toutiao.R
-import kotlinx.android.synthetic.main.web_view_details.*
+import kotlinx.android.synthetic.main.layout_web_view_details.*
 
 class DetailsActivity : SwipeCloseActivity() {
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.web_view_details)
+        setContentView(R.layout.layout_web_view_details)
         window.apply {
             clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             setFormat(PixelFormat.TRANSLUCENT)

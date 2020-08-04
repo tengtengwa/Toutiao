@@ -3,6 +3,8 @@ package com.example.toutiao.logic.repository
 import com.example.toutiao.logic.dao.NewsDao
 import com.example.toutiao.logic.model.*
 import com.example.toutiao.logic.network.NewsNetwork
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 object NewsRepository {
 
@@ -36,22 +38,14 @@ object NewsRepository {
 
     fun isVideoSaved() = NewsDao.isVideosSaved()
 
-    suspend fun refreshTopNews() = NewsNetwork.getTopNewsList()
+    suspend fun refreshTopNews() = withContext(Dispatchers.IO) { NewsNetwork.getTopNewsList() }
 
-    suspend fun refreshAntipNews() = NewsNetwork.getAntipNewsList()
+    suspend fun refreshAntipNews() = withContext(Dispatchers.IO) { NewsNetwork.getAntipNewsList() }
 
-    suspend fun refreshEntNews() = NewsNetwork.getEntNewsList()
+    suspend fun refreshEntNews() = withContext(Dispatchers.IO) { NewsNetwork.getEntNewsList() }
 
-    suspend fun refreshSportNews() = NewsNetwork.getSportNewsList()
+    suspend fun refreshSportNews() = withContext(Dispatchers.IO) { NewsNetwork.getSportNewsList() }
 
-    suspend fun refreshVideo() = NewsNetwork.getVideoList()
+    suspend fun refreshVideo() = withContext(Dispatchers.IO) { NewsNetwork.getVideoList() }
 
-/*    private fun <T> fire(context: CoroutineContext, block: suspend () -> Result<T>) = liveData<Result<T>> {
-        val result = try {
-            block()
-        } catch (e: Exception) {
-            Result.failure<T>(e)
-        }
-        emit(result)
-    }*/
 }
