@@ -7,9 +7,14 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorPink">#EC6395</color>
     <color name="colorRed">#F83E3E</color>
-    <color name="colorTintBlue">#4DA7F1</color>
+    <color name="colorTintBlue">#EAF6FF</color>
     <color name="colorDarkBlue">#0B84E9</color>
     <color name="colorGray">#6D7275</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFF</color>
+
+    <color name="tv_top">@color/colorDarkBlue</color>
+    <color name="tv_small">@color/colorGray</color>
+    <color name="tv_normal">@color/colorBlack</color>
+
 </resources>

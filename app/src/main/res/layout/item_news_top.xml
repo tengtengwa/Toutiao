@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="15dp">
+
+    <TextView
+        android:id="@+id/tv_item1_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/tv_normal_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tool:text="谋篇布局“十四五”，习近平领航前行"/>
+
+    <TextView
+        android:id="@+id/tv_item1_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/tv_small"
+        android:textSize="@dimen/tv_small_size"
+        app:layout_constraintStart_toEndOf="@+id/tv_top"
+        app:layout_constraintTop_toTopOf="@+id/tv_top"
+        tool:text="央视网新闻" />
+
+    <TextView
+        android:id="@+id/tv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_top"
+        android:textSize="@dimen/tv_small_size"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item1_title"
+        tool:text="置顶" />
+
+    <ImageView
+        android:id="@+id/iv_remove_item1"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="@drawable/ic_del"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item1_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_top" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item1_author" />
+
+    <TextView
+        android:id="@+id/tv_comment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/tv_small"
+        android:textSize="@dimen/tv_small_size"
+        app:layout_constraintStart_toEndOf="@+id/tv_item1_author"
+        app:layout_constraintTop_toTopOf="@+id/tv_item1_author"
+        tool:text="6666评"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/tv_small"
+        android:textSize="@dimen/tv_small_size"
+        app:layout_constraintStart_toEndOf="@+id/tv_comment_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_comment_count"
+        tool:text="2小时前"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

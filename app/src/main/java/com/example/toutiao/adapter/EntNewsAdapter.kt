@@ -22,7 +22,7 @@ class EntNewsAdapter(private val entNews: ArrayList<EntNewsModel.EntNewsList>) :
     class Item1Holder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.tv_item1_title)
         val author: TextView = view.findViewById(R.id.tv_item1_author)
-        val time: TextView = view.findViewById(R.id.tv_item1_time)
+        val time: TextView = view.findViewById(R.id.tv_top)
         val removeItem1: ImageView = view.findViewById(R.id.iv_remove_item1)
     }
 
@@ -47,7 +47,7 @@ class EntNewsAdapter(private val entNews: ArrayList<EntNewsModel.EntNewsList>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
         ITEM_STYLE_1 -> {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_no_image, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_top, parent, false)
             Item1Holder(view)
         }
         ITEM_STYLE_2 -> {

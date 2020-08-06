@@ -25,6 +25,9 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * 新闻页面抗疫模块
+ */
 class AntiFragment : BaseFragment() {
 
     private lateinit var viewModel: AntipViewModel

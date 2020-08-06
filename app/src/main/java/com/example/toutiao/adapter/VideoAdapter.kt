@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.toutiao.R
 import com.example.toutiao.base.BaseApplication
-import com.example.toutiao.databinding.NewsVideoItemBinding
+import com.example.toutiao.databinding.ItemNewsVideoBinding
 import com.example.toutiao.logic.model.VideoModel
 import com.example.toutiao.utils.ImageUtil
 import com.example.toutiao.utils.NetworkUtil
@@ -20,11 +20,11 @@ class VideoAdapter(private val videoList: List<VideoModel.VideoList>) :
         RecyclerView.Adapter<VideoAdapter.MyViewHolder>() {
 
     class MyViewHolder(viewDataBinding: ViewDataBinding) : RecyclerView.ViewHolder(viewDataBinding.root) {
-        var binding: NewsVideoItemBinding = viewDataBinding as NewsVideoItemBinding
+        var binding: ItemNewsVideoBinding = viewDataBinding as ItemNewsVideoBinding
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = DataBindingUtil.inflate<NewsVideoItemBinding>(LayoutInflater.from(parent.context),
+        val binding = DataBindingUtil.inflate<ItemNewsVideoBinding>(LayoutInflater.from(parent.context),
                 R.layout.item_news_video, parent, false)
         return MyViewHolder(binding)
     }
